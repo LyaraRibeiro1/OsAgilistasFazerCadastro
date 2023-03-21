@@ -14,8 +14,8 @@ public class RegisterTest {
     @Test public void testFazerLoginNoAgilistas() {
     /*
     Cenário: Verificar login com sucesso
-    Dado que o usuário esteja na página “os agilistas”
-    Quando o usuário realizar o login com sucesso
+    Dado que o usuário esteja na página “Os agilistas”
+    Quando o usuário realizar o login com credenciais corretas
     Então a página deve redirecionar o usuário para sua página de perfil
     */
 
@@ -31,18 +31,16 @@ public class RegisterTest {
         driver.findElement(By.name("password-1")).sendKeys("Thuco123*");
         driver.findElement(By.xpath("//*[@id=\"forminator-module-17221\"]/div[5]/div/div/button")).click();
         assertEquals("https://osagilistas.com/meu-perfil/",driver.getCurrentUrl());
-        driver.quit();
     }
     @Test public void testEmailIncorreto(){
     /*
-    Cenário: Verificar login com dados incorretos
-    Dado que o usuário esteja na página “os agilistas”
+    Cenário: Verificar login com credenciais incorretas
+    Dado que o usuário esteja na página “Os agilistas”
     E o usuário insere um email incorreto
     E o usuário insere uma senha incorreta
     Quando o usuário clicar em login
     Então a página deve exibir uma mensagem de erro
     */
-
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nícholas\\chromedriver_win32\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
@@ -60,8 +58,8 @@ public class RegisterTest {
     }
     @Test public void testVerificarUsuarioLogado() {
     /*
-    Cenário: Verificar página de login com usuário logado
-    Dado que o usuário esteja logado na página “os agilistas”
+    Cenário: Verificar mensagem informando que o usuário já está logado
+    Dado que o usuário esteja logado na página “Os agilistas”
     Quando o usuário acessar a página de login
     Então a página deve informar que o usuário já está logado
     */
@@ -85,12 +83,11 @@ public class RegisterTest {
     @Test public void testFazerLogoutNoAgilistas() {
     /*
     Cenário: Verificar logout com sucesso
-    Dado que o usuário esteja logado na página “os agilistas”
+    Dado que o usuário esteja logado na página “Os agilistas”
     E o usuário clica em Logout
     Quando o usuário confirma que deseja se desconectar
     Então a página deve desconectar a conta
-    E redirecionar para a página inicial
-    */
+     */
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nícholas\\chromedriver_win32\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
